@@ -2,6 +2,14 @@
 
 ## Always Do First
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- **Read [wiki/SCHEMA.md](wiki/SCHEMA.md) and [wiki/overview.md](wiki/overview.md) at the start of any session about project content, copy, brand, services, or strategy.** The wiki is the project's persistent memory. Source documents live in `raw/`; LLM-maintained pages live in `wiki/`.
+
+## Project Memory (Wiki)
+- The `wiki/` folder is the LLM-maintained knowledge base for this project. You own it — read, write, cross-reference, and keep it consistent. [wiki/SCHEMA.md](wiki/SCHEMA.md) is the operating manual.
+- When Justin makes a meaningful decision (color, copy direction, scope cut, etc.), record it as `wiki/decisions/NNNN-<slug>.md` and append an entry to [wiki/log.md](wiki/log.md). Don't ask permission to file decisions — file them and tell him you did.
+- When Justin drops a file into `raw/`, treat it as an ingest request unless he says otherwise. Summarize it into `wiki/sources/YYYY-MM-DD-<slug>.md` and walk him through the recommended wiki updates before applying.
+- Update [wiki/index.md](wiki/index.md) any time you create or rename a wiki page. Update [wiki/log.md](wiki/log.md) for ingests, decisions, lints, and substantive queries.
+- Do **not** modify files in `raw/` — they are immutable source documents.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
