@@ -1,15 +1,43 @@
-# CLAUDE.md — Frontend Website Rules
+# CLAUDE.md — Inside Out Website project guide
+
+This repo is for **insideoutiowa.com** — a website redesign for Inside Out Wellness & Advocacy, an Iowa-based mental-health nonprofit. The wiki at `docs/wiki/` is the canonical store for project-internal knowledge (brand system, services catalog, sources, decisions). The codebase is static HTML/CSS/JS in `site/` served locally via `serve.mjs`.
 
 ## Always Do First
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
-- **Read [wiki/SCHEMA.md](wiki/SCHEMA.md) and [wiki/overview.md](wiki/overview.md) at the start of any session about project content, copy, brand, services, or strategy.** The wiki is the project's persistent memory. Source documents live in `raw/`; LLM-maintained pages live in `wiki/`.
 
-## Project Memory (Wiki)
-- The `wiki/` folder is the LLM-maintained knowledge base for this project. You own it — read, write, cross-reference, and keep it consistent. [wiki/SCHEMA.md](wiki/SCHEMA.md) is the operating manual.
-- When Justin makes a meaningful decision (color, copy direction, scope cut, etc.), record it as `wiki/decisions/NNNN-<slug>.md` and append an entry to [wiki/log.md](wiki/log.md). Don't ask permission to file decisions — file them and tell him you did.
-- When Justin drops a file into `raw/`, treat it as an ingest request unless he says otherwise. Summarize it into `wiki/sources/YYYY-MM-DD-<slug>.md` and walk him through the recommended wiki updates before applying.
-- Update [wiki/index.md](wiki/index.md) any time you create or rename a wiki page. Update [wiki/log.md](wiki/log.md) for ingests, decisions, lints, and substantive queries.
-- Do **not** modify files in `raw/` — they are immutable source documents.
+## Read this first
+
+**Before doing anything that touches site content, copy, brand, services, or strategy:**
+
+1. Read [docs/wiki/WIKI-CLAUDE.md](docs/wiki/WIKI-CLAUDE.md) — the agent-facing schema for this project's LLM-maintained wiki. It governs how decisions, plans, sources, and brand pages are filed.
+2. Read [docs/wiki/overview.md](docs/wiki/overview.md) — current synthesis of the project.
+3. Tail the wiki log: `ls docs/wiki/log/ | sort -r | head -10` — gives the last 10 events so you know recent state.
+4. If the work touches a specific topic (a service, a location, the brand system, a website page), drill into the matching `docs/wiki/services/*.md`, `architecture/locations.md`, or `brand/*.md` file before recommending changes.
+
+The wiki at `docs/wiki/` is the canonical store for project-internal knowledge. The codebase (`site/*.html`, `site/shared.css`, `site/shared.js`, `site/brand_assets/`) is the canonical store for code. Don't duplicate one in the other.
+
+## Operating rules for this project
+
+**When Justin makes a meaningful decision** (color, copy direction, scope cut, voice direction, etc.):
+- File it as `docs/wiki/decisions/active/YYYY-MM-DD-<slug>.md` using the template in [WIKI-CLAUDE.md](docs/wiki/WIKI-CLAUDE.md) → "Decision page template."
+- Update [docs/wiki/decisions/index.md](docs/wiki/decisions/index.md) to point at the new file.
+- Append a `docs/wiki/log/YYYY-MM-DD-<slug>.md` entry.
+- Don't ask permission — just do it, then mention it.
+
+**When Justin drops a file into `docs/wiki/raw/`** (brand guide, copy deck, photography, reference article):
+- Treat it as an ingest request unless he says otherwise.
+- Read it, write a summary to `docs/wiki/sources/YYYY-MM-DD-<slug>.md`, propose updates to existing wiki pages, walk them with Justin, then apply.
+- Update the relevant section's `index.md` and append a `docs/wiki/log/YYYY-MM-DD-<slug>.md` entry.
+- Never modify files in `docs/wiki/raw/` — they are immutable.
+
+**When proposing new copy direction, page layout, or content production for a service/page:**
+- File it under `docs/wiki/plans/` first using the "Plan page template" in [WIKI-CLAUDE.md](docs/wiki/WIKI-CLAUDE.md).
+- Plans harden into decisions when Justin commits; they migrate to `decisions/active/` at that point.
+
+**When the codebase doesn't match a wiki claim:**
+- Trust the code, fix the wiki. Architecture pages (especially [docs/wiki/architecture/site-map.md](docs/wiki/architecture/site-map.md)) describe **what exists today**, not aspirations.
+
+> Note: a pre-AIOS llm-wiki used to live at `<project-root>/wiki/` + `<project-root>/raw/`. It was reshaped into `docs/wiki/` on 2026-05-23 (see [docs/wiki/log/2026-05-23-wiki-converted-from-project-root.md](docs/wiki/log/2026-05-23-wiki-converted-from-project-root.md)). The old `wiki/` and `raw/` directories at project root are kept temporarily; **always use `docs/wiki/`** as the canonical wiki. The old locations can be removed when Justin says so.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
@@ -18,7 +46,7 @@
 
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
+- Start the dev server: `node serve.mjs` (serves the `site/` directory at `http://localhost:3001`)
 - `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
 - If the server is already running, do not start a second instance.
 
@@ -34,7 +62,7 @@
 
 
 ## Brand Assets
-- Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
+- Always check the `site/brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
 - If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
 
