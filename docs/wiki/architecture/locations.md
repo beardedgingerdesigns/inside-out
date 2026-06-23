@@ -3,17 +3,19 @@
 Inside Out operates three locations. Knoxville opens Spring 2026 — show "Coming Soon: Spring 2026" badge.
 
 ## Woodward
-- **Address:** TBD (not in brief).
+- **Address:** 706 Cedar Ave., Woodward, IA 50276 (confirmed 2026-05-29).
 - **Phone:** 515-642-4125.
-- **Services known to be offered here:** Crisis Stabilization (adults).
+- **Services:** Crisis Stabilization – **Adults only**. (Melinda confirmed 2026-06-19: "we only have Adults in Woodward.")
+- **Referral fax:** 515-334-4086 (per adult crisis referral form).
 - **Asset:** [`brand_assets/woodward_da6b77bbe1caaa67421435478352144d.webp`](../../../site/brand_assets/woodward_da6b77bbe1caaa67421435478352144d.webp).
 
 ## Perry
 - **Address:** 410 12th St., Perry, IA 50220.
-- **Phone:** Admin line 515-642-7070 (verify whether this is Perry-specific or org-wide).
-- **Services known to be offered here:** Crisis Stabilization (children — see `crisis-child.png` and the dedicated [perry.html](../../../site/perry.html)).
+- **Phone:** 515-642-7070 — this is the number for **all Perry services**, not just Admin (Melinda confirmed 2026-06-19).
+- **Services:** Crisis Stabilization – **Children (ages 5–17)**, Peer Support Services, and likely other non-Woodward services. (Melinda confirmed 2026-06-19: "have Kids in Perry" + "The 7070 number is also the number for all of our services in Perry.")
+- **Referral fax (children's crisis):** 515-666-4340 (per children's crisis referral form).
 - **Asset:** [`brand_assets/PerryLocation_da6b77bbe1caaa67421435478352144d.webp`](../../../site/brand_assets/PerryLocation_da6b77bbe1caaa67421435478352144d.webp).
-- **Page exists:** [perry.html](../../../site/perry.html). The most fleshed-out single-location page on the site so far; could become the template for Woodward and Knoxville.
+- **Page exists:** [perry.html](../../../site/perry.html). The most fleshed-out single-location page on the site so far; template for Woodward and Knoxville.
 
 ## Knoxville
 - **Status:** Opening Spring 2026. Show "Coming Soon" badge on homepage location card.
@@ -35,10 +37,12 @@ Per-location pages now exist ([woodward.html](../../../site/woodward.html), [kno
 
 ## Open questions
 
-- Is the Woodward address available? (Live placeholder is `1234 Main St` — launch blocker.)
-- Is `515-642-7070` Perry-specific or the org admin line for all sites?
+- ~~Is the Woodward address available?~~ **Resolved:** 706 Cedar Ave., Woodward, IA 50276 (confirmed 2026-05-29).
+- ~~Is `515-642-7070` Perry-specific or the org admin line for all sites?~~ **Resolved:** It's the number for all Perry services (Melinda 2026-06-19).
 - What services will Knoxville offer at launch?
-- **Location-page architecture decision** (Justin): per-location pages cloned from Perry, or one combined `/locations` page?
+- ~~Location-page architecture decision~~ **Resolved:** per-location pages (see [decision](../decisions/active/2026-05-28-per-location-pages.md)).
+- Which services besides Children's Crisis are at Perry? (Peer Support form uses the Perry 7070 number — confirm full list with Melinda.)
+- Where should Transitional Living application forms be submitted? (Not specified on the form.)
 
 ## Source
 

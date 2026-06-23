@@ -37,7 +37,7 @@ The wiki at `docs/wiki/` is the canonical store for project-internal knowledge. 
 **When the codebase doesn't match a wiki claim:**
 - Trust the code, fix the wiki. Architecture pages (especially [docs/wiki/architecture/site-map.md](docs/wiki/architecture/site-map.md)) describe **what exists today**, not aspirations.
 
-> Note: a pre-AIOS llm-wiki used to live at `<project-root>/wiki/` + `<project-root>/raw/`. It was reshaped into `docs/wiki/` on 2026-05-23 (see [docs/wiki/log/2026-05-23-wiki-converted-from-project-root.md](docs/wiki/log/2026-05-23-wiki-converted-from-project-root.md)). The old `wiki/` and `raw/` directories at project root are kept temporarily; **always use `docs/wiki/`** as the canonical wiki. The old locations can be removed when Justin says so.
+> Note: a pre-AIOS wiki used to live at `<project-root>/wiki/` + `<project-root>/raw/`. It was reshaped into `docs/wiki/` on 2026-05-23 (see [docs/wiki/log/2026-05-23-wiki-converted-from-project-root.md](docs/wiki/log/2026-05-23-wiki-converted-from-project-root.md)). The old `wiki/` and `raw/` directories at project root are kept temporarily; **always use `docs/wiki/`** as the canonical wiki. The old locations can be removed when Justin says so.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.

@@ -7,3 +7,4 @@ The Inside Out brand system: voice, palette, typography, asset inventory. Projec
 - [palette.md](palette.md) — color decisions and usage rules (currently brief-suggested, not finalized).
 - [typography.md](typography.md) — type pairing, scale, tracking, line-height (currently brief-suggested, not finalized).
 - [assets-inventory.md](assets-inventory.md) — what's in `brand_assets/` as of 2026-05-17.
+- [illustration-style.md](illustration-style.md) — art direction, prompt template, and inventory for service page hero illustrations.
